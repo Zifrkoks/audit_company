@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="АУДИТ КОМПАНИ — бухгалтерский аутсорсинг и аудит. Комплексное сопровождение бизнеса, восстановление учета, минимизация налогов. Работаем с регионами РФ.">
+    <meta name="keywords" content="аудит, бухгалтерские услуги, аутсорсинг, налоговый учет, восстановление учета, консультации, минимизация налогов, АУДИТ КОМПАНИ">
+    <meta name="author" content="АУДИТ КОМПАНИ">
+    <meta name="robots" content="index, follow">
+    <title>АУДИТ КОМПАНИ | бухгалтерский аутсорсинг и аудит</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0E17;
+            color: #E5E9F0;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Custom Properties — палитра */
+        :root {
+            --bg-primary: #0A0E17;
+            --bg-secondary: #10161F;
+            --accent-gold: #C9A03D;
+            --accent-gold-light: #DFB96A;
+            --accent-gold-dark: #9E7B2C;
+            --text-primary: #F0F3F8;
+            --text-secondary: #B0B8C5;
+            --border-gold: rgba(201, 160, 61, 0.25);
+            --card-bg: rgba(22, 28, 38, 0.8);
+            --shadow-lg: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+            --transition-smooth: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            --navbar-height: 90px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .gold-text {
+            color: var(--accent-gold);
+        }
+
+        .gold-border {
+            border-bottom: 2px solid var(--accent-gold);
+            width: 80px;
+            margin: 1rem auto 0 auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.2rem;
+            font-weight: 600;
+            border-radius: 0px;
+            transition: var(--transition-smooth);
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: #0A0E17;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(201, 160, 61, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-gold);
+            color: #0A0E17;
+            transform: translateY(-3px);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(201, 160, 61, 0.1);
+            /* плавный скролл с учетом фиксированного хедера */
+            scroll-margin-top: var(--navbar-height);
+        }
+
+        /* Header */
+        .navbar {
+            padding: 24px 0;
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-gold);
+            height: auto;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at 10% 30%, rgba(201, 160, 61, 0.08), transparent 70%);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+        .hero-image {
+            position: relative;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-gold);
+        }
+
+        /* Cards & Grids */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(4px);
+            padding: 2rem;
+            border: 1px solid var(--border-gold);
+            transition: var(--transition-smooth);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.4);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .price-tag {
+            font-weight: 700;
+            margin-top: 1rem;
+            color: var(--accent-gold-light);
+        }
+
+        /* prices table */
+        .price-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .price-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            border-top: 3px solid var(--accent-gold);
+            transition: 0.3s;
+        }
+        .price-card h3 {
+            font-size: 1.8rem;
+        }
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            color: var(--accent-gold);
+        }
+
+        /* Features */
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .feature-icon {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+        }
+
+        /* Recovery Section */
+        .recovery-content {
+            background: linear-gradient(135deg, #10161F 0%, #0A0E17 100%);
+            padding: 3rem;
+            border-left: 6px solid var(--accent-gold);
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-gold);
+            color: white;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+        .contact-info i {
+            color: var(--accent-gold);
+            margin-right: 1rem;
+            width: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: #05080F;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-gold);
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* responsive */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-stats { justify-content: center; }
+            .contact-grid { grid-template-columns: 1fr; }
+            h2 { font-size: 2.2rem; }
+            .hero-title { font-size: 2.8rem; }
+            :root {
+                --navbar-height: 120px;
+            }
+            section {
+                scroll-margin-top: 120px;
+            }
+        }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            section { padding: 60px 0; }
+            .container { padding: 0 20px; }
+            :root {
+                --navbar-height: 140px;
+            }
+            section {
+                scroll-margin-top: 140px;
+            }
+        }
+        /* scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0E17; }
+        ::-webkit-scrollbar-thumb { background: var(--accent-gold); }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>АУДИТ <span>КОМПАНИ</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#prices">Тарифы</a></li>
+                <li><a href="#recovery">Восстановление</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div>
+                <a href="tel:+790899733983" class="btn btn-outline" style="padding: 0.6rem 1.4rem;"><i class="fas fa-phone-alt"></i> +7 909 973-3983</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content fade-up">
+                    <div class="gold-text" style="letter-spacing: 2px;">БУХГАЛТЕРСКИЙ АУТСОРСИНГ</div>
+                    <h1 class="hero-title">бухгалтерское сопровождение <br> <span class="gold-text">вашего бизнеса</span></h1>
+                    <p class="hero-desc">АУДИТ КОМПАНИ — более 12 лет безупречной репутации. Комплексное ведение, налоговый консалтинг и полная юридическая защита.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Получить консультацию <i class="fas fa-arrow-right"></i></a>
+                        <a href="#services" class="btn btn-outline" style="margin-left: 1rem;">Наши услуги</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item"><h3>250+</h3><span>клиентов</span></div>
+                        <div class="stat-item"><h3>99%</h3><span>успешных проверок</span></div>
+                        <div class="stat-item"><h3>24/7</h3><span>поддержка юристов</span></div>
+                    </div>
+                </div>
+                <div class="hero-image fade-up">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&auto=format" alt="Профессиональный бухгалтерский аудит" style="object-fit: cover; height: auto;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services">
+            <div class="container">
+                <div style="text-align: center;" class="fade-up">
+                    <h2>Эксклюзивные <span class="gold-text">решения</span></h2>
+                    <div class="gold-border"></div>
+                    <p class="section-subtitle">Полный спектр бухгалтерских и аудиторских услуг премиум-класса</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card fade-up"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>Полное бухгалтерское сопровождение</h3><p>ОСНО / УСН. Расчет налогов, ФОТ, регистры, баланс — под ключ.</p><div class="price-tag">от 10 000 ₽</div></div>
+                    <div class="service-card fade-up"><div class="service-icon"><i class="fas fa-balance-scale"></i></div><h3>Аудит и восстановление учета</h3><p>Восстановим любой период, подадим уточненные декларации, защитим от штрафов.</p></div>
+                    <div class="service-card fade-up"><div class="service-icon"><i class="fas fa-gavel"></i></div><h3>Налоговая оптимизация</h3><p>Легальное снижение налоговой нагрузки, консультирование по минимизации базы.</p></div>
+                    <div class="service-card fade-up"><div class="service-icon"><i class="fas fa-file-contract"></i></div><h3>Юридический документооборот</h3><p>Составление договоров, первичной документации, регистров под ключ.</p></div>
+                    <div class="service-card fade-up"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>Зарплатный аутсорсинг</h3><p>Расчет ЗП, налоги, фонды, отчетность в ПФР, ФСС — полностью.</p></div>
+                    <div class="service-card fade-up"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>Представительство в госорганах</h3><p>Защита при налоговых проверках, ИФНС, фондах.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why aутсорсинг преимущества-->
+        <section style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="fade-up" style="text-align: center;">
+                    <h2>Почему <span class="gold-text">аутсорсинг</span> в АУДИТ КОМПАНИ</h2>
+                    <div class="gold-border"></div>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item fade-up"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><div><h3>Конфиденциальность</h3><p>Сохранение коммерческой тайны, NDA и строгая внутренняя безопасность.</p></div></div>
+                    <div class="feature-item fade-up"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><div><h3>Снижение издержек до 40%</h3><p>Отсутствие затрат на офис, софт, программы 1С и обучение штатного бухгалтера.</p></div></div>
+                    <div class="feature-item fade-up"><div class="feature-icon"><i class="fas fa-clock"></i></div><div><h3>Своевременная отчетность</h3><p>Гарантия полной и точной сдачи налоговой, РСВ, балансов в срок.</p></div></div>
+                    <div class="feature-item fade-up"><div class="feature-icon"><i class="fas fa-globe"></i></div><div><h3>Работа с регионами РФ</h3><p>Удаленное сопровождение организаций по всей России.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Тарифы и цены -->
+        <section id="prices">
+            <div class="container">
+                <div style="text-align: center;" class="fade-up">
+                    <h2>Прозрачные <span class="gold-text">тарифы</span></h2>
+                    <div class="gold-border"></div>
+                    <p class="section-subtitle">Индивидуальные условия для каждого клиента</p>
+                </div>
+                <div class="price-grid">
+                    <div class="price-card fade-up"><h3>Нулевая отчетность</h3><div class="price">5 000 ₽</div><p>Подготовка и сдача нулевой отчетности для организаций без движения.</p><i class="fas fa-check gold-text"></i> </div>
+                    <div class="price-card fade-up"><h3>УСН (6% / 15%)</h3><div class="price">от 10 000 ₽</div><p>Полное ведение бухгалтерского и налогового учета. Книга доходов/расходов, декларации.</p></div>
+                    <div class="price-card fade-up"><h3>ОСНО (общая система)</h3><div class="price">от 20 000 ₽</div><p>НДС, налог на прибыль, имущество, полный учет. Премиум поддержка.</p></div>
+                    <div class="price-card fade-up"><h3>Разовые консультации</h3><div class="price">от 2 500 ₽</div><p>Экспресс-аудит, налоговая оптимизация, сложные кейсы.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Восстановление бухгалтерского учета -->
+        <section id="recovery">
+            <div class="container">
+                <div class="recovery-content fade-up">
+                    <h2 style="font-size: 2rem;">Восстановление учета <span class="gold-text">за любой период</span></h2>
+                    <p style="font-size: 1.2rem; max-width: 800px;">Восстановим бухгалтерский и налоговый учет с нуля или частично. Подача уточненных деклараций, минимизация рисков. Высокое качество в короткие сроки — работаем даже при отсутствии первички до 70%.</p>
+                    <ul style="margin-top: 1.5rem; list-style: none;">
+                        <li><i class="fas fa-check-circle gold-text"></i> Восстановление регистров и отчетности</li>
+                        <li><i class="fas fa-check-circle gold-text"></i> Легализация и защита перед ФНС</li>
+                        <li><i class="fas fa-check-circle gold-text"></i> Сроки от 3 дней — под ключ</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 2rem;">Заказать восстановление</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Бухгалтерское обслуживание и консультации -->
+        <section>
+            <div class="container">
+                <div class="fade-up" style="text-align: center;">
+                    <h2>Бухгалтерское сопровождение <span class="gold-text">Премиум</span></h2>
+                    <div class="gold-border"></div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="fade-up"><i class="fas fa-database gold-text" style="font-size: 2rem;"></i><h3>Полный цикл 1С: Предприятие</h3><p>Обработка первички, регистры, закрытие периодов.</p></div>
+                    <div class="fade-up"><i class="fas fa-chalkboard-teacher gold-text" style="font-size: 2rem;"></i><h3>Консультации руководителей</h3><p>Налоговые консультации по сложным сделкам и оптимизация базы.</p></div>
+                    <div class="fade-up"><i class="fas fa-file-invoice-dollar gold-text" style="font-size: 2rem;"></i><h3>Минимизация налогов</h3><p>Правовые схемы снижения налоговых рисков, без вреда для бизнеса.</p></div>
+                    <div class="fade-up"><i class="fas fa-laptop-code gold-text" style="font-size: 2rem;"></i><h3>Автоматизация документооборота</h3><p>Внедрение ЭДО, интеграция с банками, сокращение ошибок.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Особенности: почему выбирают нас (список из ТЗ) -->
+        <section style="background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format') no-repeat center center/cover; background-attachment: fixed; position: relative;">
+            <div style="background: rgba(10,14,23,0.85); padding: 5rem 0;">
+                <div class="container">
+                    <div class="fade-up" style="text-align: center;">
+                        <h2>Почему <span class="gold-text">доверяют</span> лидеры рынка</h2>
+                        <div class="gold-border"></div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 2rem; margin-top: 3rem;">
+                        <div class="feature-item fade-up"><i class="fas fa-chart-pie gold-text fa-2x"></i><div><h3>Опыт 12+ лет</h3><p>Сложные предприятия, холдинги, стартапы — экспертиза высшего уровня.</p></div></div>
+                        <div class="feature-item fade-up"><i class="fas fa-user-tie gold-text fa-2x"></i><div><h3>Команда аттестованных аудиторов</h3><p>Члены СРО, бывшие сотрудники контролирующих органов.</p></div></div>
+                        <div class="feature-item fade-up"><i class="fas fa-seal gold-text fa-2x"></i><div><h3>Страхование профессиональной ответственности</h3><p>Ваша финансовая безопасность гарантирована.</p></div></div>
+                        <div class="feature-item fade-up"><i class="fas fa-brain gold-text fa-2x"></i><div><h3>Юридическая защита от нерадивых бухгалтеров</h3><p>Полное возмещение убытков по договору.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты и форма -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="fade-up">
+                        <h2>Свяжитесь <span class="gold-text">с нами</span></h2>
+                        <div class="gold-border" style="margin: 0.5rem 0 1.5rem 0;"></div>
+                        <p style="margin-bottom: 2rem;">Начните бухгалтерское обслуживание сегодня. Бесплатная первичная консультация.</p>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone-alt"></i> <strong>Телефон:</strong> +7 (909) 973-39-83</p>
+                            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@audit-compani.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Офис:</strong> Москва, Пресненская наб., 12 (по предварительной записи)</p>
+                            <p><i class="fas fa-clock"></i> <strong>Режим:</strong> Пн-Пт 9:00 – 20:00</p>
+                            <div style="margin-top: 2rem;">
+                                <a href="tel:+790899733983" class="btn btn-primary" style="margin-right: 1rem;"><i class="fas fa-phone"></i> Позвонить</a>
+                                <a href="mailto:info@audit-compani.com" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Написать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-up">
+                        <form action="#" method="post" id="callbackForm">
+                            <div class="form-group"><input type="text" placeholder="Ваше имя" required></div>
+                            <div class="form-group"><input type="tel" placeholder="Телефон *" required></div>
+                            <div class="form-group"><input type="email" placeholder="E-mail"></div>
+                            <div class="form-group"><textarea rows="4" placeholder="Опишите задачу: восстановление, ведение, консультация..."></textarea></div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку →</button>
+                            <p style="font-size: 0.75rem; margin-top: 1rem;">* Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 АУДИТ КОМПАНИ — Лицензия на осуществление аудиторской деятельности. Все права защищены.</p>
+            <p style="margin-top: 0.5rem;">Бухгалтерский аутсорсинг, налоговый консалтинг, восстановление учета в РФ</p>
+        </div>
+    </footer>
+
+    <script>
+        // анимация при скролле fade-up
+        const faders = document.querySelectorAll('.fade-up');
+        const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
+        
+        // ПЛАВНЫЙ СКРОЛЛ ДЛЯ ВНУТРЕННИХ ЯКОРЕЙ
+        // Получаем все ссылки, которые начинаются с "#" и ведут на элемент внутри страницы
+        const allLinks = document.querySelectorAll('a[href^="#"]');
+        
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const hash = this.getAttribute('href');
+                // Пропускаем пустые ссылки и якоря, не указывающие на существующий id
+                if (hash === "#" || hash === "#!" || hash === "") return;
+                
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    e.preventDefault();  // отменяем стандартный прыжок
+                    
+                    // Получаем высоту фиксированного хедера (с запасом для точного позиционирования)
+                    const navbar = document.querySelector('.navbar');
+                    let navbarHeight = 0;
+                    if (navbar) {
+                        navbarHeight = navbar.offsetHeight;
+                    }
+                    // Дополнительный отступ, чтобы секция не прилипала к шапке
+                    const extraOffset = 20;
+                    const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - extraOffset;
+                    
+                    // Плавная прокрутка
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Обновляем URL hash (без резкого прыжка)
+                    history.pushState(null, null, hash);
+                }
+            });
+        });
+        
+        // (опционально) При загрузке страницы, если есть якорь в URL — скорректируем позицию с учетом хедера
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    setTimeout(() => {
+                        const navbar = document.querySelector('.navbar');
+                        let navbarHeight = navbar ? navbar.offsetHeight : 0;
+                        const extraOffset = 20;
+                        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - extraOffset;
+                        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        });
+        
+        // простой обработчик формы (имитация)
+        const form = document.querySelector('#callbackForm');
+        if(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Спасибо! Наш специалист свяжется с вами в течение часа. АУДИТ КОМПАНИ — надёжность и качество.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>
